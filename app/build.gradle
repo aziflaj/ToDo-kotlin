@@ -1,4 +1,15 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.14.449'
+    }
+}
+
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 23
@@ -24,4 +35,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:design:23.0.1'
+    compile 'org.jetbrains.kotlin:kotlin-stdlib:0.14.449'
 }
