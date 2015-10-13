@@ -1,4 +1,10 @@
 <resources>
-    <string name="app_name">ToDo</string>
+    <string name="app_name" translatable="false">ToDo</string>
     <string name="action_settings">Settings</string>
+
+    <string name="task.new_task.actionbar.title">New Task</string>
+    <string name="task.create.title">Create a new task</string>
+    <string name="task.title.placeholder">Task title</string>
+    <string name="task.description.placeholder">Task description</string>
+    <string name="task.button.save">Save</string>
 </resources>
