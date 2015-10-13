@@ -23,6 +23,7 @@
             android:id="@+id/task_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:capitalize="sentences"
             android:hint="@string/task.title.placeholder" />
     </android.support.design.widget.TextInputLayout>
 
@@ -34,11 +35,13 @@
             android:id="@+id/task_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:capitalize="sentences"
             android:hint="@string/task.description.placeholder"
             android:inputType="textMultiLine" />
     </android.support.design.widget.TextInputLayout>
 
     <Button
+        android:id="@+id/save_task_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/task.button.save" />

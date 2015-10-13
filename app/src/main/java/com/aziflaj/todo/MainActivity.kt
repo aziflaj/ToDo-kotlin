@@ -1,12 +1,17 @@
 package com.aziflaj.todo
 
 import android.content.Intent
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import com.aziflaj.todo.data.TaskContract
+import com.aziflaj.todo.data.TaskDbHelper
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +20,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
+
+        // TODO: create a cursor adapter to populate a ListView
+        val helper = TaskDbHelper(applicationContext)
+        val db: SQLiteDatabase = helper.readableDatabase
+
+        var cursor: Cursor = db.query(
+                TaskContract.TaskEntry.TABLE_NAME,
+                null, null, null, null, null, null)
+
+        Log.d("Task Count", "${cursor.count} rows fetched")
 
         val newTaskFab = findViewById(R.id.fab) as FloatingActionButton
 
