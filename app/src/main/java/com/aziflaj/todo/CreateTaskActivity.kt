@@ -26,15 +26,11 @@ class CreateTaskActivity : AppCompatActivity() {
             val taskDescriptionEditText = findViewById(R.id.task_description) as EditText
             val taskDescription: String = taskDescriptionEditText.text.toString()
 
-            val helper = TaskDbHelper(applicationContext)
-            val db: SQLiteDatabase? = helper.writableDatabase
-
             val values = ContentValues()
-
             values.put(TaskEntry.COL_TITLE, taskTitle)
             values.put(TaskEntry.COL_DESCRIPTION, taskDescription)
 
-            val inserted = db?.insert(TaskEntry.TABLE_NAME, null, values)
+            var inserted = contentResolver.insert(TaskEntry.CONTENT_URI, values)
 
             Log.d("New Task", "inserted: $inserted")
         })

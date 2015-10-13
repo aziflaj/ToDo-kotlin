@@ -22,14 +22,10 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         // TODO: create a cursor adapter to populate a ListView
-        val helper = TaskDbHelper(applicationContext)
-        val db: SQLiteDatabase = helper.readableDatabase
+        val cursor: Cursor? = contentResolver.query(TaskContract.TaskEntry.CONTENT_URI,
+                null, null, null, null)
 
-        var cursor: Cursor = db.query(
-                TaskContract.TaskEntry.TABLE_NAME,
-                null, null, null, null, null, null)
-
-        Log.d("Task Count", "${cursor.count} rows fetched")
+        Log.d("Task Count", "${cursor?.count} rows fetched")
 
         val newTaskFab = findViewById(R.id.fab) as FloatingActionButton
 
@@ -46,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    // TODO: remove if unnecesary
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
 
