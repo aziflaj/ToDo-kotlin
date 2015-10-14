@@ -7,4 +7,6 @@
     <string name="task.description.placeholder">Task description</string>
     <string name="task.button.save">Save</string>
     <string name="task.details.menu.delete">Delete</string>
+
+    <string name="error.input.empty">Title or description is empty</string>
 </resources>

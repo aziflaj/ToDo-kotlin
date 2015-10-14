@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.aziflaj.todo.data.TaskContract.TaskEntry
 import com.aziflaj.todo.data.TaskDbHelper
 
@@ -25,13 +26,19 @@ class CreateTaskActivity : AppCompatActivity() {
             val taskDescriptionEditText = findViewById(R.id.task_description) as EditText
             val taskDescription: String = taskDescriptionEditText.text.toString()
 
-            val values = ContentValues()
-            values.put(TaskEntry.COL_TITLE, taskTitle)
-            values.put(TaskEntry.COL_DESCRIPTION, taskDescription)
+            if (taskTitle.isEmpty() or taskDescription.isEmpty()) {
+                val inputEmpty = getString(R.string.error_input_empty)
 
-            var inserted = contentResolver.insert(TaskEntry.CONTENT_URI, values)
+                Toast.makeText(applicationContext, inputEmpty, Toast.LENGTH_LONG).show()
+            } else {
+                val values = ContentValues()
+                values.put(TaskEntry.COL_TITLE, taskTitle)
+                values.put(TaskEntry.COL_DESCRIPTION, taskDescription)
 
-            Log.d("New Task", "inserted: $inserted")
+                var inserted = contentResolver.insert(TaskEntry.CONTENT_URI, values)
+
+                Log.d("New Task", "inserted: $inserted")
+            }
         })
     }
 }
