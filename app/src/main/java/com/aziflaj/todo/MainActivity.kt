@@ -14,10 +14,7 @@ class MainActivity : AppCompatActivity(), android.app.LoaderManager.LoaderCallba
     override fun onCreateLoader(id: Int, args: Bundle?): android.content.Loader<Cursor>? {
         return CursorLoader(applicationContext,
                 TaskContract.TaskEntry.CONTENT_URI,
-                null,
-                null,
-                null,
-                null)
+                null, null, null, null)
     }
 
     override fun onLoadFinished(loader: android.content.Loader<Cursor>?, data: Cursor?) {
@@ -46,6 +43,18 @@ class MainActivity : AppCompatActivity(), android.app.LoaderManager.LoaderCallba
         taskAdapter = TaskAdapter(applicationContext, null, 0)
 
         listView?.adapter = taskAdapter
+
+        listView?.setOnItemClickListener({ parent, view, position, id ->
+            val currentTask: Cursor? = parent.getItemAtPosition(position) as Cursor
+
+            var detailsIntent = Intent(this, TaskDetailsActivity::class.java)
+            val TASK_ID_COL = currentTask?.getColumnIndex(TaskContract.TaskEntry._ID) as Int
+            val _id = currentTask?.getLong(TASK_ID_COL) as Long
+            val taskUri = TaskContract.TaskEntry.buildWithId(_id)
+
+            detailsIntent.setData(taskUri)
+            startActivity(detailsIntent)
+        })
 
         val newTaskFab = findViewById(R.id.fab) as FloatingActionButton
 

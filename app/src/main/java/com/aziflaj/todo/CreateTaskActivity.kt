@@ -1,6 +1,7 @@
 package com.aziflaj.todo
 
 import android.content.ContentValues
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -36,6 +37,8 @@ class CreateTaskActivity : AppCompatActivity() {
                 values.put(TaskEntry.COL_DESCRIPTION, taskDescription)
 
                 var inserted = contentResolver.insert(TaskEntry.CONTENT_URI, values)
+
+                startActivity(Intent(this, MainActivity::class.java))
 
                 Log.d("New Task", "inserted: $inserted")
             }
