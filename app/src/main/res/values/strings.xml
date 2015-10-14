@@ -6,4 +6,5 @@
     <string name="task.title.placeholder">Task title</string>
     <string name="task.description.placeholder">Task description</string>
     <string name="task.button.save">Save</string>
+    <string name="task.details.menu.delete">Delete</string>
 </resources>
