@@ -25,9 +25,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.aziflaj.todo.MainActivity" />
         </activity>
+
         <provider
-            android:authorities="com.aziflaj.todo"
-            android:name=".data.TaskProvider" />
+            android:name=".data.TaskProvider"
+            android:authorities="com.aziflaj.todo" />
     </application>
 
 </manifest>

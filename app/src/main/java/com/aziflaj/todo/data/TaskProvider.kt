@@ -70,7 +70,7 @@ class TaskProvider : ContentProvider() {
     override fun insert(uri: Uri?, values: ContentValues?): Uri? {
         val db = mOpenHelper?.writableDatabase
         val match: Int = sUriMatcher.match(uri)
-        var insertionUri: Uri? = null
+        var insertionUri: Uri?
         var insertedId: Long
 
         when (match) {

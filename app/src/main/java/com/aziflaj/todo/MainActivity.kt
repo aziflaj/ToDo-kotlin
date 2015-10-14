@@ -2,7 +2,6 @@ package com.aziflaj.todo
 
 import android.content.Intent
 import android.database.Cursor
-import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AppCompatActivity
@@ -11,7 +10,6 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.aziflaj.todo.data.TaskContract
-import com.aziflaj.todo.data.TaskDbHelper
 
 class MainActivity : AppCompatActivity() {
 

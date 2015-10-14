@@ -15,7 +15,6 @@ class CreateTaskActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_task)
-        title = getString(R.string.task_new_task_actionbar_title)
 
         val saveBtn = findViewById(R.id.save_task_btn) as Button
 
