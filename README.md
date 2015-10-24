@@ -2,7 +2,7 @@
 
 ![Kotlin: Swift for Android](http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1444852572kotlin.png)
 
-This is the first project of the [52 weeks, 52 projects](https://aziflaj.github.io/52-weeks-52-projects/) challenge, showing the usage of [Kotlin](https://kotlinlang.org/) for building Android applications.
+This is the [1st project](https://github.com/aziflaj/52#week-1) of the [52 weeks, 52 projects](https://aziflaj.github.io/52-weeks-52-projects/) challenge, showing the usage of [Kotlin](https://kotlinlang.org/) for building Android applications.
 
 ![UI](http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1444850468design.png)
 
